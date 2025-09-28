@@ -14,4 +14,12 @@ document.addEventListener('DOMContentLoaded', function () {
         mobileMenu.classList.add('hidden');
         body.classList.remove('overflow-hidden');
     });
+
+    const backToTop = document.getElementById('back-to-top');
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 });
