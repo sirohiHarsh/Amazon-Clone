@@ -22,4 +22,23 @@ document.addEventListener('DOMContentLoaded', function () {
             behavior: 'smooth'
         });
     });
+
+    const searchInput = document.getElementById('search-input');
+    const productCards = document.querySelectorAll('.product-card');
+
+    searchInput.addEventListener('keyup', () => {
+       
+        const searchTerm = searchInput.value.toLowerCase();
+
+        productCards.forEach(card => {
+
+            const cardContent = card.textContent.toLowerCase();
+
+            if (cardContent.includes(searchTerm)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
 });
